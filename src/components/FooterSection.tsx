@@ -1,11 +1,10 @@
 const FooterSection = () => (
-  <footer className="border-t border-border py-10">
-    <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-      <p className="font-display text-xl uppercase tracking-wider text-foreground">
-        Do Básico ao Avançado
-      </p>
-      <p>© {new Date().getFullYear()} Todos os direitos reservados.</p>
+  <footer className="border-t border-border px-[5%] py-8 flex flex-col md:flex-row justify-between items-center gap-2 text-muted-foreground text-[0.78rem]">
+    <div className="font-display text-[1.2rem] tracking-[2px] text-foreground">
+      MARCUS GABRIEL <span className="text-primary">×</span> ISRAEL FELIPE
     </div>
+    <div>© 2025 · Todos os direitos reservados</div>
+    <div>Especialistas em Cardiorrespiratório</div>
   </footer>
 );
 

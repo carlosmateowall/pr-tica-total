@@ -1,48 +1,57 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { motion } from "framer-motion";
+import { useState } from "react";
 
 const faqs = [
-  { q: "Preciso ser formado em Educação Física?", a: "O curso é voltado para profissionais e estudantes de Educação Física. Se você está em formação, o conteúdo vai acelerar seu aprendizado prático." },
-  { q: "Como funciona o acesso?", a: "Após o pagamento, você recebe acesso imediato a todos os módulos. O acesso é vitalício — estude no seu ritmo." },
-  { q: "Tem certificado?", a: "Sim! Ao concluir todos os módulos, você recebe um certificado de conclusão digital." },
-  { q: "O conteúdo é baseado em evidências?", a: "100%. Todo o material é fundamentado em artigos científicos e protocolos validados na prática clínica e esportiva." },
-  { q: "Posso tirar dúvidas com os professores?", a: "Sim. Você terá acesso a uma comunidade exclusiva onde pode interagir diretamente com Marcus e Israel." },
+  { q: "Preciso ter formação em Ed. Física?", a: "O curso foi feito para estudantes e profissionais de educação física. Conhecimento básico de fisiologia do exercício é recomendado." },
+  { q: "Tenho acesso por quanto tempo?", a: "Acesso vitalício. Uma vez comprado, você assiste quando quiser, quantas vezes precisar, incluindo atualizações futuras do conteúdo." },
+  { q: "O curso tem certificado?", a: "Sim! Ao concluir todos os módulos você recebe certificado de conclusão para usar como hora complementar ou no currículo profissional." },
+  { q: "Consigo aplicar na prática imediatamente?", a: "Essa é a proposta. O foco é prático — sair sabendo prescrever com embasamento, não só memorizar teoria. Cada módulo traz aplicações reais para o dia a dia do profissional." },
+  { q: "Posso cancelar a qualquer momento?", a: "Por ser pagamento único, não há assinatura para cancelar. Você paga uma vez e tem acesso para sempre." },
 ];
 
-const FAQSection = () => (
-  <section className="py-20">
-    <div className="container mx-auto max-w-2xl">
-      <motion.h2
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="font-display text-4xl md:text-5xl uppercase tracking-wider text-center mb-12"
-      >
-        Perguntas <span className="text-primary">Frequentes</span>
-      </motion.h2>
-      <Accordion type="single" collapsible className="space-y-2">
-        {faqs.map((faq, i) => (
-          <AccordionItem
-            key={i}
-            value={`faq-${i}`}
-            className="bg-card rounded-button card-shadow border-none px-6"
-          >
-            <AccordionTrigger className="text-left font-medium hover:no-underline py-5">
-              {faq.q}
-            </AccordionTrigger>
-            <AccordionContent className="text-muted-foreground pb-5">
-              {faq.a}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
-    </div>
-  </section>
-);
+const FAQSection = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section className="py-24 px-[5%] bg-secondary border-t border-border">
+      <div className="max-w-[760px] mx-auto">
+        <p className="text-primary text-[0.72rem] font-medium tracking-[3px] uppercase mb-3">Dúvidas</p>
+        <h2 className="font-display text-foreground tracking-wider leading-none mb-12" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
+          PERGUNTAS FREQUENTES
+        </h2>
+
+        <div>
+          {faqs.map((faq, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div key={i} className="border-b border-border">
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  className="w-full flex justify-between items-center gap-4 py-6 text-left text-foreground text-[0.95rem] font-light hover:text-primary transition-colors"
+                >
+                  {faq.q}
+                  <span
+                    className={`w-6 h-6 rounded-full border flex items-center justify-center text-base shrink-0 transition-all duration-200 ${
+                      isOpen
+                        ? "bg-primary text-primary-foreground border-primary rotate-45"
+                        : "border-border text-muted-foreground"
+                    }`}
+                  >
+                    +
+                  </span>
+                </button>
+                <div
+                  className="overflow-hidden transition-all duration-300"
+                  style={{ maxHeight: isOpen ? "200px" : "0", paddingBottom: isOpen ? "1.5rem" : "0" }}
+                >
+                  <p className="text-[#888] text-[0.88rem] leading-[1.7]">{faq.a}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default FAQSection;

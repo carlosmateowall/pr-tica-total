@@ -7,33 +7,38 @@
 @layer base {
   :root {
     --background: 0 0% 3%;
-    --foreground: 0 0% 96%;
+    --foreground: 60 4% 94%;
     --card: 0 0% 7%;
-    --card-foreground: 0 0% 96%;
+    --card-foreground: 60 4% 94%;
     --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 96%;
-    --primary: 75 85% 60%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 96%;
+    --popover-foreground: 60 4% 94%;
+    --primary: 75 85% 55%;
+    --primary-foreground: 0 0% 3%;
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 60 4% 94%;
     --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 64%;
-    --accent: 0 0% 12%;
-    --accent-foreground: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 9%;
+    --accent-foreground: 60 4% 94%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 100% / 0.08;
+    --border: 0 0% 100% / 0.07;
     --input: 0 0% 15%;
-    --ring: 75 85% 60%;
+    --ring: 75 85% 55%;
     --radius: 0.75rem;
+
+    --surface: 0 0% 7%;
+    --surface2: 0 0% 9%;
+    --blue: 210 100% 70%;
+
     --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 75 85% 60%;
+    --sidebar-foreground: 60 4% 94%;
+    --sidebar-primary: 75 85% 55%;
     --sidebar-primary-foreground: 0 0% 0%;
     --sidebar-accent: 0 0% 12%;
-    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-accent-foreground: 60 4% 94%;
     --sidebar-border: 0 0% 100% / 0.08;
-    --sidebar-ring: 75 85% 60%;
+    --sidebar-ring: 75 85% 55%;
   }
 }
 
@@ -43,6 +48,7 @@
   }
   body {
     @apply bg-background text-foreground font-body antialiased;
+    font-weight: 300;
   }
 }
 
@@ -54,12 +60,8 @@
     font-family: 'DM Sans', sans-serif;
   }
   .text-outline {
-    -webkit-text-stroke: 1px hsl(0 0% 30%);
+    -webkit-text-stroke: 1px rgba(240,240,238,0.25);
     color: transparent;
-  }
-  .text-outline-solid {
-    -webkit-text-stroke: 0;
-    color: hsl(var(--foreground));
   }
   .card-shadow {
     box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 4px 24px -1px rgba(0,0,0,0.5);
