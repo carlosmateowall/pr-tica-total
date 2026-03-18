@@ -1,123 +1,92 @@
 import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
 
 const modules = [
   {
     num: "01",
     title: "Testes de Esforço",
-    description: "Aprenda a aplicar e interpretar testes ergoespirométricos, limiares ventilatórios e protocolos de avaliação cardiorrespiratória.",
+    description: "Avaliação da capacidade cardiorrespiratória. Protocolos, ergoespirometria e interpretação de resultados para diferentes perfis de pacientes.",
     professor: "Marcus Gabriel",
-    color: "marcus" as const,
+    type: "mg" as const,
   },
   {
     num: "02",
     title: "Prescrição Clínica",
-    description: "Domine a prescrição de exercícios para hipertensão, diabetes, obesidade e outras doenças metabólicas com segurança.",
+    description: "Cardiopatas, diabéticos, hipertensos e sedentários. Como prescrever com segurança para cada condição clínica, com protocolos individualizados.",
     professor: "Marcus Gabriel",
-    color: "marcus" as const,
+    type: "mg" as const,
   },
   {
     num: "03",
     title: "Periodização",
-    description: "Estruture macrociclos, mesociclos e microciclos para diferentes perfis de alunos e objetivos de saúde.",
+    description: "Planejamento de curto, médio e longo prazo. Linear, ondulatória e por blocos aplicada ao treino aeróbio em diferentes contextos e populações.",
     professor: "Marcus Gabriel",
-    color: "marcus" as const,
+    type: "mg" as const,
   },
   {
     num: "04",
-    title: "HIIT",
-    description: "Protocolos de treino intervalado de alta intensidade baseados em evidências para máxima eficiência metabólica.",
+    title: "HIIT — Treinamento Intervalado",
+    description: "Módulo exclusivo sobre alta intensidade. Protocolo, contraindicações, progressão e aplicação segura em diferentes populações clínicas e saudáveis.",
     professor: "Marcus Gabriel",
-    color: "marcus" as const,
+    type: "mg" as const,
   },
   {
     num: "05",
     title: "Performance — Corrida & Ultra",
-    description: "Periodização para corrida de rua, meia maratona, maratona e ultramaratona com foco em performance e prevenção de lesões.",
+    description: "Treinamento de alto rendimento para corredores, maratonistas e ultramaratonistas. Ciência aplicada à performance de ponta com metodologia de elite.",
     professor: "Israel Felipe",
-    color: "israel" as const,
+    type: "if" as const,
   },
 ];
 
-const colorMap = {
-  marcus: {
-    accent: "hsl(75, 85%, 60%)",
-    bg: "hsla(75, 85%, 60%, 0.08)",
-    border: "hsla(75, 85%, 60%, 0.2)",
-    badgeBg: "hsla(75, 85%, 60%, 0.15)",
-    badgeText: "hsl(75, 85%, 60%)",
-    numText: "hsla(75, 85%, 60%, 0.15)",
+const styles = {
+  mg: {
+    num: "rgba(181,242,61,0.25)",
+    prof: "bg-primary/10 text-primary",
   },
-  israel: {
-    accent: "hsl(210, 100%, 70%)",
-    bg: "hsla(210, 100%, 70%, 0.08)",
-    border: "hsla(210, 100%, 70%, 0.2)",
-    badgeBg: "hsla(210, 100%, 70%, 0.15)",
-    badgeText: "hsl(210, 100%, 70%)",
-    numText: "hsla(210, 100%, 70%, 0.15)",
+  if: {
+    num: "rgba(100,180,255,0.25)",
+    prof: "bg-[rgba(100,180,255,0.1)] text-[#64b4ff]",
   },
 };
 
 const ModulesSection = () => (
-  <section className="py-20">
-    <div className="container mx-auto px-4">
-      <motion.h2
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="font-display text-4xl md:text-5xl uppercase tracking-wider text-center mb-16"
-      >
-        O que você vai <span className="text-primary">dominar</span>
-      </motion.h2>
-      <div className="max-w-3xl mx-auto space-y-4">
+  <section id="modulos" className="py-24 px-[5%]">
+    <div className="max-w-[1200px] mx-auto">
+      <div className="flex flex-wrap justify-between items-end gap-4 mb-12">
+        <div>
+          <p className="text-primary text-[0.72rem] font-medium tracking-[3px] uppercase mb-3">Conteúdo do curso</p>
+          <h2 className="font-display text-foreground tracking-wider leading-none" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
+            5 MÓDULOS,<br />DO ZERO AO AVANÇADO
+          </h2>
+        </div>
+        <span className="text-muted-foreground text-[0.78rem]">5–10 aulas por módulo</span>
+      </div>
+
+      <div className="flex flex-col border border-border rounded-xl overflow-hidden" style={{ gap: "1px", backgroundColor: "rgba(255,255,255,0.07)" }}>
         {modules.map((mod, i) => {
-          const c = colorMap[mod.color];
+          const s = styles[mod.type];
           return (
             <motion.div
               key={mod.num}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5, ease: [0.2, 0, 0, 1] }}
-              className="relative rounded-xl p-6 transition-all duration-300 hover:scale-[1.02]"
-              style={{
-                backgroundColor: c.bg,
-                border: `1px solid ${c.border}`,
-              }}
+              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.2, 0, 0, 1] }}
+              className="bg-background grid grid-cols-[40px_1fr] md:grid-cols-[60px_1fr_auto_auto] items-center gap-4 md:gap-8 px-6 md:px-10 py-7 hover:bg-secondary transition-colors"
             >
-              <div className="flex gap-5">
-                <span
-                  className="font-display text-6xl md:text-7xl leading-none select-none"
-                  style={{ color: c.numText }}
-                >
-                  {mod.num}
-                </span>
-                <div className="flex-1 min-w-0">
-                  <h3
-                    className="font-display text-xl md:text-2xl uppercase tracking-wide mb-2"
-                    style={{ color: c.accent }}
-                  >
-                    {mod.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    {mod.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge
-                      className="text-xs font-medium border-0"
-                      style={{ backgroundColor: c.badgeBg, color: c.badgeText }}
-                    >
-                      Prof. {mod.professor}
-                    </Badge>
-                    <Badge
-                      className="text-xs font-medium border-0"
-                      style={{ backgroundColor: c.badgeBg, color: c.badgeText }}
-                    >
-                      5–10 aulas
-                    </Badge>
-                  </div>
-                </div>
+              <span className="font-display text-[2.8rem] leading-none tracking-tighter" style={{ color: s.num }}>
+                {mod.num}
+              </span>
+              <div>
+                <h3 className="font-display text-[1.3rem] tracking-wider mb-1">{mod.title}</h3>
+                <p className="text-muted-foreground text-[0.82rem] leading-relaxed">{mod.description}</p>
               </div>
+              <span className={`hidden md:inline-block text-[0.65rem] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full whitespace-nowrap ${s.prof}`}>
+                {mod.professor}
+              </span>
+              <span className="hidden md:inline-block text-[0.65rem] font-medium tracking-wider uppercase text-muted-foreground bg-accent px-3 py-1.5 rounded-full whitespace-nowrap">
+                5–10 aulas
+              </span>
             </motion.div>
           );
         })}

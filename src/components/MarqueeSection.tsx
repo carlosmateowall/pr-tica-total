@@ -1,16 +1,17 @@
 const keywords = [
-  "DIABETES", "HIPERTENSÃO", "VO2 MAX", "ECONOMIA DE CORRIDA",
-  "PERIODIZAÇÃO", "BIOMECÂNICA", "PRESCRIÇÃO", "ENDURANCE",
+  "PRESCRIÇÃO CLÍNICA", "TESTES DE ESFORÇO", "HIIT",
+  "PERIODIZAÇÃO", "MARATONA", "ULTRAMARATONA",
+  "DIABETES", "HIPERTENSÃO", "VO2 MAX", "CORRIDA",
 ];
 
 const MarqueeSection = () => (
-  <section className="py-12 overflow-hidden border-y border-border">
-    <div className="animate-marquee flex gap-8 whitespace-nowrap">
+  <section className="bg-secondary border-y border-border py-3.5 overflow-hidden whitespace-nowrap">
+    <div className="inline-flex animate-marquee">
       {[...keywords, ...keywords].map((word, i) => (
         <span
           key={i}
-          className={`font-display text-5xl md:text-7xl ${
-            i % 2 === 0 ? "text-outline" : "text-outline-solid opacity-20"
+          className={`font-display text-[0.85rem] tracking-[3px] px-8 ${
+            i % 3 === 0 ? "text-primary" : "text-muted-foreground"
           }`}
         >
           {word}
