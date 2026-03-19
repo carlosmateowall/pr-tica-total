@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 const FinalCTASection = () => (
   <section className="relative py-32 px-[5%] text-center overflow-hidden">
     {/* Watermark */}
-    <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-extrabold text-[22vw] text-primary/[0.03] pointer-events-none tracking-tighter whitespace-nowrap select-none">
-      MG × IF
+    <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-extrabold text-[18vw] text-primary/[0.03] pointer-events-none tracking-tighter whitespace-nowrap select-none">
+      ENTRE PLANILHAS
     </span>
 
     <motion.div
@@ -13,11 +13,11 @@ const FinalCTASection = () => (
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
     >
-      <h2 className="font-display tracking-wider leading-[0.95] mb-6" style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}>
-        CHEGA DE LACUNA<br /><span className="text-primary">NA FORMAÇÃO</span>
+      <h2 className="font-display tracking-wider leading-[0.95] mb-6" style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}>
+        SUA INSEGURANÇA<br />ESTÁ DEIXANDO<br /><span className="text-primary">DINHEIRO NA MESA</span>
       </h2>
-      <p className="text-[#888] text-[0.95rem] max-w-[500px] mx-auto mb-10 leading-[1.7]">
-        Dois especialistas, um curso, formação completa. Do sedentário ao ultramaratonista.
+      <p className="text-muted-foreground text-[0.95rem] max-w-[520px] mx-auto mb-10 leading-[1.7]">
+        Preencha de uma vez por todas essa lacuna na sua formação. Comece a cobrar mais por sessão e entregar resultado de verdade para seus alunos.
       </p>
       <a href="#preco" className="inline-block bg-primary text-primary-foreground font-bold text-[0.9rem] tracking-[1.5px] uppercase px-12 py-4 rounded-sm hover:brightness-90 hover:-translate-y-0.5 transition-all">
         Quero me inscrever →

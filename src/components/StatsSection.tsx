@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "+1.500", label: "Alunos Formados" },
-  { value: "20+", label: "Anos de Experiência" },
-  { value: "500km+", label: "em Ultramaratonas" },
-  { value: "100%", label: "Baseado em Evidências" },
+  { value: "6+1", label: "Módulos + Bônus" },
+  { value: "30–60", label: "Videoaulas" },
+  { value: "2", label: "Professores" },
+  { value: "1 ano", label: "De Acesso" },
 ];
 
 const StatsSection = () => (

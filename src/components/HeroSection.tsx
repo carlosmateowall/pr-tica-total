@@ -3,8 +3,8 @@ import marcusImg from "@/assets/professor-marcus.jpg";
 import israelImg from "@/assets/professor-israel.jpg";
 
 const tags = [
-  "Cardiopata", "Diabético", "Hipertenso", "Sedentário",
-  "Atleta", "Maratonista", "Ultramaratonista", "HIIT", "Periodização",
+  "Diabetes", "Hipertensão", "Obesidade", "Idosos",
+  "Atletas", "Maratona", "HIIT", "Fartlek", "Periodização",
 ];
 
 const HeroSection = () => (
@@ -20,17 +20,17 @@ const HeroSection = () => (
     >
       <span className="inline-flex items-center gap-2 bg-primary/10 border border-primary/25 text-primary text-[0.72rem] font-medium tracking-[1.5px] uppercase px-4 py-1.5 rounded-full mb-6">
         <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-        Formação Profissional · Cardiorrespiratório
+        Formação Profissional · Prescrição Cardiorrespiratória
       </span>
 
       <h1 className="font-display leading-[0.95] tracking-wider mb-6" style={{ fontSize: "clamp(3.5rem, 7vw, 6rem)" }}>
-        DO BÁSICO<br />
-        AO <span className="text-primary">AVANÇADO</span><br />
-        <span className="text-outline">NA PRÁTICA</span>
+        FORMADO MAS<br />
+        <span className="text-primary">INSEGURO</span><br />
+        <span className="text-outline">PRA PRESCREVER?</span>
       </h1>
 
-      <p className="text-[#aaa] text-base leading-[1.75] max-w-[480px] mb-8">
-        O curso que a sua faculdade não te deu. Dois especialistas, uma formação completa — do sedentário com doença metabólica ao atleta de ultra maratona.
+      <p className="text-muted-foreground text-base leading-[1.75] max-w-[480px] mb-8">
+        O curso que a sua faculdade não te deu. Aprenda a prescrever do cardiopata ao atleta de forma prática e objetiva — com quem faz isso todos os dias.
       </p>
 
       <div className="flex flex-wrap gap-2 mb-10">
@@ -59,7 +59,7 @@ const HeroSection = () => (
       className="relative hidden md:grid grid-cols-2 gap-3 self-end pt-20"
     >
       <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground font-display text-[0.85rem] tracking-[2px] px-4 py-1 rounded-full whitespace-nowrap z-10">
-        2 professores · 5 módulos
+        2 professores · 6 módulos + bônus
       </div>
 
       {/* Marcus */}
