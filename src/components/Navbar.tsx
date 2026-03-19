@@ -1,7 +1,7 @@
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-[5%] py-5 bg-background/88 backdrop-blur-xl border-b border-border">
     <div className="font-display text-[1.4rem] tracking-[3px] text-foreground">
-      MG <span className="text-primary">×</span> IF
+      ENTRE <span className="text-primary">PLANILHAS</span>
     </div>
     <ul className="hidden md:flex items-center gap-8 list-none">
       <li><a href="#professores" className="text-[0.8rem] text-muted-foreground tracking-wider hover:text-foreground transition-colors">Professores</a></li>

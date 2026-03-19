@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 
 const targets = [
   { icon: "🎓", title: "Estudantes de Ed. Física", desc: "Que querem sair na frente com o conhecimento prático que a faculdade não oferece." },
-  { icon: "💼", title: "Profissionais formados", desc: "Que querem se atualizar e prescrever com mais segurança e embasamento científico." },
-  { icon: "🏥", title: "Personal Trainers", desc: "Que atendem populações especiais e precisam de protocolos específicos por condição clínica." },
-  { icon: "🏃", title: "Treinadores de corrida", desc: "Que trabalham com atletas, maratonistas e ultramaratonistas e buscam performance com ciência." },
-  { icon: "🔬", title: "Pesquisadores", desc: "Que precisam de base prática sólida em prescrição para integrar com a pesquisa científica." },
-  { icon: "🌍", title: "Todo o Brasil", desc: "Conteúdo de qualidade acessível para qualquer profissional do país, com preço low cost." },
+  { icon: "😰", title: "Formados inseguros", desc: "Profissionais que não se sentem seguros para prescrever exercício cardio com competência." },
+  { icon: "🏥", title: "Personal Trainers", desc: "Que atendem grupos especiais (diabéticos, hipertensos, obesos, idosos) e precisam de protocolos." },
+  { icon: "🏃", title: "Treinadores de corrida", desc: "Que trabalham com atletas amadores e profissionais e buscam performance com ciência." },
+  { icon: "🔬", title: "Entusiastas da ciência", desc: "Que querem entender a fisiologia por trás da prescrição e aplicar com embasamento." },
+  { icon: "💰", title: "Quem quer cobrar mais", desc: "Profissionais que querem entregar mais resultado e aumentar o valor da sessão de treinamento." },
 ];
 
 const TargetSection = () => (

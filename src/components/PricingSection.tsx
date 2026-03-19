@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 
 const features = [
-  "5 módulos com 5–10 aulas cada",
-  "Marcus: Testes, Prescrição Clínica, Periodização e HIIT",
-  "Israel: Performance para corredores e ultramaratonistas",
+  "6 módulos + 1 bônus (HIIT) com 5–10 aulas cada",
+  "Marcus: Fisiologia, Testes, Prescrição Clínica, Grupos Especiais, Métodos de Treino",
+  "Israel: Prescrição para Atletas amadores e profissionais",
+  "Modelos de planilhas de treinamento cardio",
   "Material de apoio em PDF",
   "Certificado de conclusão",
-  "Acesso vitalício com atualizações futuras",
+  "Acesso por 1 ano com atualizações",
+  "Comunidade para dúvidas",
 ];
 
 const PricingSection = () => (
@@ -31,17 +33,17 @@ const PricingSection = () => (
           Oferta de lançamento
         </span>
 
-        <h3 className="font-display text-[1.8rem] tracking-[2px] mb-1">Curso Completo de Cardiorrespiratório</h3>
-        <p className="text-muted-foreground text-[0.82rem] mb-8">5 módulos · 25–50 aulas · 2 professores · Acesso vitalício</p>
+        <h3 className="font-display text-[1.8rem] tracking-[2px] mb-1">Curso Entre Planilhas</h3>
+        <p className="text-muted-foreground text-[0.82rem] mb-8">6 módulos + bônus · 30–60 aulas · 2 professores · Acesso por 1 ano</p>
 
         <div className="grid grid-cols-2 gap-3 mb-8">
           <div className="bg-accent border border-border rounded-lg p-4">
             <div className="font-display text-base tracking-wider mb-0.5">MARCUS GABRIEL</div>
-            <div className="text-muted-foreground text-[0.68rem] leading-snug">Clínico · Doenças metabólicas · Prescrição</div>
+            <div className="text-muted-foreground text-[0.68rem] leading-snug">Clínico · Grupos especiais · Métodos · HIIT</div>
           </div>
           <div className="bg-accent border border-border rounded-lg p-4">
             <div className="font-display text-base tracking-wider mb-0.5">ISRAEL FELIPE</div>
-            <div className="text-muted-foreground text-[0.68rem] leading-snug">Performance · Corrida · Maratona · Ultra</div>
+            <div className="text-muted-foreground text-[0.68rem] leading-snug">Performance · Atletas · Corrida · Maratona</div>
           </div>
         </div>
 
@@ -53,7 +55,7 @@ const PricingSection = () => (
 
         <ul className="flex flex-col gap-3 mb-8">
           {features.map((f) => (
-            <li key={f} className="text-[#bbb] text-[0.85rem] flex items-start gap-3">
+            <li key={f} className="text-muted-foreground text-[0.85rem] flex items-start gap-3">
               <span className="text-primary font-bold shrink-0">✓</span>
               {f}
             </li>
